@@ -52,7 +52,6 @@ public class CarSimulationController {
                 return;
             }
             vehicle.setAccessToken(accessToken);
-            vehicle.setCode(payload.getCode());
         }
 
         VehicleDoorStatus doorStatus = getVehicleInfo(vehicle.getAccessToken());
@@ -146,6 +145,7 @@ public class CarSimulationController {
                     .postForEntity(connectionInformation.getTokenUrl(),httpEntity, AccessTokenInformation.class);
 
             if (loginResponse.getStatusCode() == HttpStatus.OK) {
+                vehicle.setCode(code);
                 return loginResponse.getBody()!=null? loginResponse.getBody().getAccess_token():null;
             }
         }catch (HttpClientErrorException e){
