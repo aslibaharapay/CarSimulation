@@ -1,0 +1,27 @@
+.profile-container {
+    text-align: center;
+    background-image: url("../Best-or-nothing-hero-XL.jpg");
+}
+
+.form-container {
+    border-radius: 50px;
+    padding: 90px;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-info .profile-avatar img {
+    border-radius: 50%;
+    max-width: 250px;
+}
+
+.profile-info .profile-name {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.profile-info .profile-email {
+    font-weight: 400;
+}
