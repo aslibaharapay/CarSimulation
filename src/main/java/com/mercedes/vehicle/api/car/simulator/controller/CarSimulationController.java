@@ -134,7 +134,6 @@ public class CarSimulationController {
     }
 
     private String getAccessTokenInfo(String code) {
-
         MultiValueMap<String, String> multipartData = new LinkedMultiValueMap<>();
         multipartData.add("grant_type", "authorization_cogitde");
         multipartData.add("code", code);
