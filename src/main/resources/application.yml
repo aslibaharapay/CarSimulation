@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8080
 openapi:
   clientId: 05644454-d465-47fb-ad25-140cd45c0792
   clientSecret: VhuogEiOxWHaGwqZWRPsIRfAodvlgLwfrvaCGXJuFgwSajDKWMDcikoGNjjJMSgW

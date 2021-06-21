@@ -2,7 +2,7 @@ import SockJS from "sockjs-client";
 import * as StompJs from "@stomp/stompjs";
 import getEvent from "./event"
 
-export const URL = 'http://localhost:8082/ws';
+export const URL = 'http://localhost:8080/ws';
 
 export class WsStompClientUtil {
 
