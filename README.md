@@ -38,3 +38,6 @@ npm start
 
 if there is any problem on web page, clean the cache or open application with indigo page
 
+## Owner contact
+Email : [asli.bhr.apaydin@gmail.com](mailto:asli.bhr.apaydin@gmail.com)
+LinkedIn: [aslibaharcay](https://www.linkedin.com/in/asl%C4%B1-bahar-%C3%A7ay-7b0b7779/)
