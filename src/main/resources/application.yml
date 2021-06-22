@@ -4,7 +4,7 @@ openapi:
   clientId: 05644454-d465-47fb-ad25-140cd45c0792
   clientSecret: VhuogEiOxWHaGwqZWRPsIRfAodvlgLwfrvaCGXJuFgwSajDKWMDcikoGNjjJMSgW
   tokenUrl: https://id.mercedes-benz.com/as/token.oauth2
-  redirectUri: http://localhost:3000/oauth2/redirect
+  redirectUri: http://localhost:8080/oauth2/redirect
   apiUrl: https://api.mercedes-benz.com/experimental/connectedvehicle/v2
 
 mercedes:

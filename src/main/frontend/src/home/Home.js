@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Home.css';
 
-export const MERCEDES_AUTH_URL = 'https://id.mercedes-benz.com/as/authorization.oauth2?response_type=code&client_id=05644454-d465-47fb-ad25-140cd45c0792&redirect_uri=http://localhost:3000/oauth2/redirect&scope=mb:vehicle:status:general mb:user:pool:reader offline_access&state=test';
+export const MERCEDES_AUTH_URL = 'https://id.mercedes-benz.com/as/authorization.oauth2?response_type=code&client_id=05644454-d465-47fb-ad25-140cd45c0792&redirect_uri=http://localhost:8080/oauth2/redirect&scope=mb:vehicle:status:general mb:user:pool:reader offline_access&state=test';
 
 class Home extends Component {
 
