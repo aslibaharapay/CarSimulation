@@ -1,4 +1,6 @@
-#MERCEDES CAR SIMULATION
+
+##MERCEDES CAR SIMULATION
+
 Project purpose is that implement an application accessing Auth. API take information and display in web page.
 We will show the last updated information on the web page.When data changed on API, we must to trigger FE.
 We also change information on Auth. API with post request.
