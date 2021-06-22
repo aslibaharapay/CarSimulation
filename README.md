@@ -36,7 +36,7 @@ Next go in the project subfolder frontend and run the following:
 npm install
 npm start
 
-if there is any problem on web page, clean the cache or open application with indigo page
+if there is any problem on web page, clean the cache or open application with incognito mod page
 
 ## Owner contact
 Email : [asli.bhr.apaydin@gmail.com](mailto:asli.bhr.apaydin@gmail.com)
