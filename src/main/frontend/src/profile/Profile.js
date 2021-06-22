@@ -18,7 +18,6 @@ class Profile extends Component {
             console.log("ws connected!")
             getWsConnection().sendMessage("/app/login.mercedes.me",
                 {code : localStorage.getItem('code')} ).then(res => {
-                    debugger;
                 this.processMessage(res);
             });
         });
@@ -30,7 +29,6 @@ class Profile extends Component {
     }
 
     processMessage(res){
-        debugger;
         console.log("Resolved Message is ---> " +res.content);
 
         if(res.content==='ERROR'){

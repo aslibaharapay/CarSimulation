@@ -10,4 +10,4 @@ openapi:
 mercedes:
   carId : B2841247C0AA2C1E97
   scheduleDelayInMillis: 10000
-  initialDelayInMillis: 150000
+  initialDelayInMillis: 10000

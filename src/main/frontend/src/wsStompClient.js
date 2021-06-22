@@ -48,7 +48,6 @@ export class WsStompClientUtil {
   }
 
   createStompClient() {
-    debugger;
     this._socket = new SockJS(URL);
 
     this.stompClient = StompJs.Stomp.over(this._socket);

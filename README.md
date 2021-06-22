@@ -1,22 +1,38 @@
-# Getting Started
+#MERCEDES CAR SIMULATION
+Project purpose is that implement an application accessing Auth. API take information and display in web page.
+We will show the last updated information on the web page.When data changed on API, we must to trigger FE.
+We also change information on Auth. API with post request.
+Of course each application has trade-off. Even if, i explain tech solution in briefly on this app with this requests.
 
-### Reference Documentation
-For further reference, please consider the following sections:
+>Never shoot for best arcitecture ,but rather the least worst
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.5.1/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.5.1/maven-plugin/reference/html/#build-image)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.5.1/reference/htmlsingle/#boot-features-developing-web-applications)
-* [Spring Security](https://docs.spring.io/spring-boot/docs/2.5.1/reference/htmlsingle/#boot-features-security)
-* [OAuth2 Client](https://docs.spring.io/spring-boot/docs/2.5.1/reference/htmlsingle/#boot-features-security-oauth2-client)
+I prefer [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) so that communication between frontend and backend could be provided bidirectionally.
+I ensured that incoming message on WebSocket was triggered by [Events Emitter](https://www.npmjs.com/package/events)
+I decide my architecture is monolith layered architecture so one docker file enough to be dockerize.
+So i implement [frontend-maven-plugin](https://github.com/eirslett/frontend-maven-plugin) in my project.
+This provided me frontend distinguish backend independent as possible according to my architecture.
+At the same time , use Node.js and its libraries in your build process without installing Node/NPM globally for your build system.
 
-### Guides
-The following guides illustrate how to use some features concretely:
+Use effective Js library as **React** that provide us single page application ease higher performance and reusable components
+For CSS template [Bootstrap](https://getbootstrap.com/)
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
-* [Securing a Web Application](https://spring.io/guides/gs/securing-web/)
-* [Spring Boot and OAuth2](https://spring.io/guides/tutorials/spring-boot-oauth2/)
-* [Authenticating a User with LDAP](https://spring.io/guides/gs/authenticating-ldap/)
+For backend ,I develop application on **Spring framework** with **Java**. I send the request Auth API with [Rest Template](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html)
+I check access-token expire case when take Http Auth Error.
+
+## Building and starting the backend
+
+Go in the project root folder and run the following:
+
+mvn clean spring-boot:run
+
+This will start a backend listening on port 8080 so make sure port 8080 is available
+
+
+## Starting the frontend
+Next go in the project subfolder frontend and run the following:
+
+npm install
+npm start
+
+if any problem on web page , clean the cache or open application with indigo page
 
