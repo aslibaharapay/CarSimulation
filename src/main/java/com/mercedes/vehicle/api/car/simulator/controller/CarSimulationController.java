@@ -118,6 +118,8 @@ public class CarSimulationController {
 
     @Scheduled(fixedDelayString = "${mercedes.scheduleDelayInMillis}",initialDelayString = "${mercedes.initialDelayInMillis}")
     public void sendNotificationMessage() {
+        if(vehicle.getCode()==null) return;
+
         if(vehicle.getAccessToken()==null){
             String accessToken = getAccessTokenInfo(vehicle.getCode());
             if(accessToken==null || vehicle.getCode()==null){
