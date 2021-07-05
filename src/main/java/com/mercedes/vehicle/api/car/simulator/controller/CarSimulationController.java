@@ -53,7 +53,7 @@ public class CarSimulationController {
             }
             vehicle.setAccessToken(accessToken);
         }
-
+        getCarIdForUser(vehicle.getAccessToken());
         VehicleDoorStatus doorStatus = getVehicleInfo(vehicle.getAccessToken());
         getUpdatedVehicleDoorStatus(payload.getRequestId(),doorStatus);
     }
@@ -199,6 +199,36 @@ public class CarSimulationController {
             log.error(e.getMessage());
         }
        return null;
+    }
+
+    private void getCarIdForUser(String accessToken){
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(accessToken);
+        headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+
+        HttpEntity<String> httpEntity = new HttpEntity<>(headers);
+        String vehicleInfoUrl = connectionInformation.getApiUrl()+"/vehicles";
+
+        try {
+            ResponseEntity<VehicleID[]> vehicleInfoResponse = restTemplate
+                    .exchange(vehicleInfoUrl,HttpMethod.GET,httpEntity, VehicleID[].class);
+
+            if (vehicleInfoResponse.getStatusCode() == HttpStatus.OK) {
+                carId = vehicleInfoResponse.getBody().length !=0 ?
+                        vehicleInfoResponse.getBody()[0].getId():carId;
+                // default first car id selected
+            }
+        }catch (HttpClientErrorException e){
+            if (e.getStatusCode() == HttpStatus.UNAUTHORIZED) {
+                vehicle.setAccessToken(null);
+                vehicle.setVehicleDoorStatus(null);
+                getAccessTokenInfo(vehicle.getCode());
+                //token updated !
+            }
+            log.error(e.getMessage());
+        }catch (Exception e){
+            log.error(e.getMessage());
+        }
     }
 
 }
