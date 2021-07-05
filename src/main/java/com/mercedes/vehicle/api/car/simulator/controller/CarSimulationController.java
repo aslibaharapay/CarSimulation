@@ -105,6 +105,7 @@ public class CarSimulationController {
         WSMessage<VehicleDoorStatus> wsMessage = new WSMessage<>();
         wsMessage.setRequestId(reqID);
         vehicle.setVehicleDoorStatus(doorStatus);
+        doorStatus.setCarID(carId);
         wsMessage.setContent(doorStatus);
         messagingTemplate.convertAndSend("/topic/public", wsMessage);
     }

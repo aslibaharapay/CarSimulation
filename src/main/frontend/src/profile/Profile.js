@@ -22,7 +22,7 @@ class Profile extends Component {
             });
         });
         getEvent().on("broadcast-message", (message) => {
-            console.log("denemeee" + message)
+            console.log("message " + message)
             this.processMessage(message);
         });
 
@@ -65,7 +65,7 @@ class Profile extends Component {
                     <label htmlFor="staticEmail" className="col-sm-2 col-form-label">Mercedes Car ID</label>
                     <div className="col-sm-10">
                         <input type="text" readOnly className="form-control-plaintext" id="staticEmail"
-                               value="B2841247C0AA2C1E97"/>
+                               value={ doorsStatusInfo && doorsStatusInfo.carID } />
                     </div>
                 </div>
 
