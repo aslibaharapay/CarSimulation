@@ -1,4 +1,4 @@
-## MERCEDES CAR SIMULATION
+## CAR SIMULATION
 
 Project purpose is to implement an application for accessing Auth. API to take information and to display in web page.
 I will show the last updated information on the web page. I must to trigger frontend, when data changes on API.
